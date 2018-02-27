@@ -139,6 +139,9 @@ return array (
     'Magento_WishlistSampleData' => 1,
     'Shopial_Facebook' => 1,
     'Temando_Shipping' => 1,
+    'Unit1_FreeGeoIp' => 1,
+    'Unit2_Converter' => 1,
     'Unit3_ConfigurableTab' => 1,
+    'Unit3_Converter' => 1,
   ),
 );
