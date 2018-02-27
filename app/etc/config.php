@@ -143,5 +143,6 @@ return array (
     'Unit2_Converter' => 1,
     'Unit3_ConfigurableTab' => 1,
     'Unit3_Converter' => 1,
+    'Unit4_Retailer' => 1,
   ),
 );

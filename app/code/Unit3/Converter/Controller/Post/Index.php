@@ -23,7 +23,6 @@ class Index extends Action
     )
     {
         parent::__construct($context);
-
         $this->validator = $validator;
         $this->googleConverter = $googleConverter;
 
@@ -31,9 +30,9 @@ class Index extends Action
 
     public function execute()
     {
-        $resultRedirect = $this->ResultFactory->create(ResultFactory::TYPE_REDIRECT);
+        $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
 
-        if($this->validator->validate($thid->getRequest())) {
+        if(!$this->validator->validate($this->getRequest())) {
             $this->messageManager->addNoticeMessage('Not valid from key');
             return $resultRedirect->setPath('*/display/select');
         }
@@ -43,15 +42,14 @@ class Index extends Action
         $amount = $params['amount'];
         $from = $params['from'];
         $to = $params['to'];
-        \Zend_Debug::dump($params);
-        exit;
 
         $res = $this->googleConverter->convert($amount, $from, $to);
         if (isset($res['error'])) {
+            // TODO: complete error view implementation
             return $resultRedirect->setPath('*/display/error');
         }
 
-        return $resultRedirect->setPath('*/display/result');
+        return $resultRedirect->setPath('*/display/result', $res);
         
     }
     

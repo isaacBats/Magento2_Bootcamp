@@ -20,8 +20,8 @@ class Select extends Action
     {
 
         /** @var \Magento\Framework\View\Result\Page $resultPage */
-        // $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
-        // $resultPage->getConfig()->getTitle()->set(__('Select'));
-        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        $resultPage->getConfig()->getTitle()->set(__('Select'));
+        return $resultPage;
     }
 }

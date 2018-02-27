@@ -1,1 +1,45 @@
-este s mi template
+<?php
+/** @var \Unit3\Converter\Block\Select $block */
+?>
+
+<form class="form" action="<?= $block->getFormActionUrl() ?>" method="post">
+    <fieldset class="fieldset">
+        <div class="field amount required">
+            <label class="label" for="amount"><span><?= __('Amount') ?></span></label>
+            <div class="control">
+                <input name="amount" id="amount" title="Amount" class="input-text" type="text" >
+            </div>
+        </div>
+        <div class="field from required">
+            <label class="label" for="from"><span><?= __('From') ?></span></label>
+            <div class="control">
+                <select name="from" id="from" title="from">
+                    <option value="" >Select one</option>
+                    <?php foreach ($block->getCurrencyList()  as $currency): ?>
+                        <option value="<?= $currency ?>"><?= $currency ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <div class="field to required">
+            <label class="label" for="to"><span><?= __('To') ?></span></label>
+            <div class="control">
+                <select name="to" id="to" title="to">
+                    <option value="" >Select one</option>
+                    <?php foreach ($block->getCurrencyList()  as $currency): ?>
+                        <option value="<?= $currency ?>"><?= $currency ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <?= $block->getBlockHtml('formkey'); ?>
+            <input type="hidden" name="hideit" id="hideit" value="">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+        </div>
+    </div>
+</form>

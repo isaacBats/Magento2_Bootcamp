@@ -1,1 +1,10 @@
-<h1>Hollalalal RESULT</h1>
+<?php
+/** @var \Unit3\Converter\Block\Result $block */
+?>
+<h1>Conversión</h1>
+    <strong>
+        <?= $block->getAmount() . $block->getFrom()?>
+    </strong> = 
+    <span>
+        <?= $block->getValue() . $block->getTo()?>
+    </span>
