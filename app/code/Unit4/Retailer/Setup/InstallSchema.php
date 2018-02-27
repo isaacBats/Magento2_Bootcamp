@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Catalog\Setup;
+namespace Unit4\Retailer\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -125,7 +125,9 @@ class InstallSchema implements InstallSchemaInterface
                 'region_id',
                 TABLE::ACTION_CASCADE
             )->setComment('Retailer Table');
-            
+        
+        $installer->getConnection()->createTable($table);
+
         $installer->endSetup();
     }
 }

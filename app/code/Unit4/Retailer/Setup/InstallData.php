@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Magento\Catalog\Setup;
+namespace Unit4\Retailer\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -87,7 +87,7 @@ class InstallData implements InstallDataInterface
 
         ];
 
-        foreach ($retailers as $retailes) {
+        foreach ($retailers as $retailer) {
             $install->getConnection()->insertForce('unit4_retailer', $retailer);
         }
 
