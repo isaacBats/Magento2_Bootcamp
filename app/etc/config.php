@@ -145,5 +145,6 @@ return array (
     'Unit3_Converter' => 1,
     'Unit4_Retailer' => 1,
     'Unit5_RetailerApi' => 1,
+    'Unit6_Retailer' => 1,
   ),
 );
