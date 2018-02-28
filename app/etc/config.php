@@ -144,5 +144,6 @@ return array (
     'Unit3_ConfigurableTab' => 1,
     'Unit3_Converter' => 1,
     'Unit4_Retailer' => 1,
+    'Unit5_RetailerApi' => 1,
   ),
 );
